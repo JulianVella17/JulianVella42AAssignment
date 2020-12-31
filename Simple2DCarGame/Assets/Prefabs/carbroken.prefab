@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249630093868182713}
   - component: {fileID: 872608492911975715}
+  - component: {fileID: 3886876771843817168}
   m_Layer: 0
   m_Name: carbroken
   m_TagString: Untagged
@@ -82,3 +83,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3886876771843817168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138264241171688704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64985f6de3733d44593e4c7d1c467123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 6037854304883843110, guid: 85738673ed5d3f04eafe279ffe5d498d, type: 3}
+  - {fileID: 5140600216393276991, guid: 2b8bafd041264c04bb41e3bee1862cbe, type: 3}
+  - {fileID: 8919686166064772313, guid: 6d0aa7b051075eb41bfeb024670135de, type: 3}
