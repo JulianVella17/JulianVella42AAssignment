@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 674677573041664462}
   - component: {fileID: 2279044390551974545}
+  - component: {fileID: -7250698623946854871}
   m_Layer: 0
   m_Name: hole
   m_TagString: Untagged
@@ -82,3 +83,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-7250698623946854871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324985401732325569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64985f6de3733d44593e4c7d1c467123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 8826610408806725632, guid: 27d7e3e0fe681984f8b0bd6b4f3e6edb, type: 3}
+  - {fileID: 7078587464242170392, guid: de86c675a665da74d88172c46cda8f4d, type: 3}
+  - {fileID: 6497973738955058770, guid: b780dbca3a047684bbe53ea43509bf20, type: 3}
+  waveConfig: {fileID: 11400000, guid: 294f77a5c93bacf4e8fdfc02fc27d486, type: 2}
