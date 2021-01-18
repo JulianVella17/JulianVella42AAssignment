@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float health = 100f;
+    [SerializeField] int health = 50;
 
     [SerializeField] float moveSpeed = 20f;
     [SerializeField] float padding = 0.5f;
@@ -13,16 +13,15 @@ public class Player : MonoBehaviour
     //allows to change volume accordingly from 0 to 1
     [SerializeField] [Range(0, 1)] float playerCollisionSoundVolume = 0.75f;
 
-    [SerializeField] AudioClip backgroundSound;
-    //allows to change volume accordingly from 0 to 1
-    [SerializeField] [Range(0, 1)] float backgroundSoundVolume = 0.75f;
+    [SerializeField] GameObject deathVisualEffects;
+
+    [SerializeField] float explosionDuration = 1f;
 
     float xMin, xMax;
 
     // Start is called before the first frame update
     void Start()
     {
-        AudioSource.PlayClipAtPoint(backgroundSound, Camera.main.transform.position, backgroundSoundVolume);
         SetUpMoveBoundaries();
     }
 
@@ -43,6 +42,12 @@ public class Player : MonoBehaviour
     {
         Move();
     }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
     //Moves player
     private void Move()
     {
@@ -80,9 +85,12 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
+            FindObjectOfType<Level>().LoadGameOver();
+
             Destroy(gameObject);
 
-            FindObjectOfType<Level>().LoadGameOver();
+            GameObject explosion = Instantiate(deathVisualEffects, transform.position, Quaternion.identity);
+            Destroy(explosion, explosionDuration);          
         }
     }
 }

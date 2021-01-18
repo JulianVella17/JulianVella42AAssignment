@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyShootFalse : MonoBehaviour
 {
+    [SerializeField] float health = 100;
 
     [SerializeField] float shotCounter;
 
@@ -11,11 +12,12 @@ public class EnemyShootFalse : MonoBehaviour
 
     [SerializeField] float maxTimeBetweenShots = 3f;
 
-    [SerializeField] float health = 500f;
-
     [SerializeField] GameObject deathVisualEffects;
 
     [SerializeField] float explosionDuration = 1f;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,29 +27,39 @@ public class EnemyShootFalse : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    private void Update()
     {
-        
+        CountDownAndShoot();
     }
 
-   
-
-    private void OnTriggerEnter2D(Collider2D otherObject)
+    private void CountDownAndShoot()
     {
-        DamageDealer dmgDealer = otherObject.gameObject.GetComponent<DamageDealer>();
+        shotCounter -= Time.deltaTime;
 
-        //if there is no dmgDealer in otherObject, end the method
-        if (!dmgDealer) //if (dmgDealer == null)
+        if (shotCounter <= 0f)
+        {
+            shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
+        }
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D bullet)
+    {
+        DamageDealer DmgDeal = bullet.gameObject.GetComponent<DamageDealer>();
+
+        if (!DmgDeal)
         {
             return;
         }
 
-        ProcessHit(dmgDealer);
+        ProcessHit(DmgDeal);
+
     }
 
-    private void ProcessHit(DamageDealer dmgDealer)
+    private void ProcessHit(DamageDealer dmgDeal)
     {
-        health -= dmgDealer.GetDamage();
+        health -= dmgDeal.GetDamage();
 
         if (health <= 0)
         {
@@ -59,7 +71,6 @@ public class EnemyShootFalse : MonoBehaviour
     {
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVisualEffects, transform.position, Quaternion.identity);
-
         Destroy(explosion, explosionDuration);
     }
 }

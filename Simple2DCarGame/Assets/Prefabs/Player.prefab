@@ -180,11 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f8f4041d53cfa4e99c1cff92b05a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 50
   moveSpeed: 5
   padding: 0.5
   playerCollisionSound: {fileID: 8300000, guid: cf80fdede290a354599ac06bec9cbe8c, type: 3}
   playerCollisionSoundVolume: 0.188
+  deathVisualEffects: {fileID: 270558947296391615, guid: 62b8628df3f7f834b81780033c7bacb6, type: 3}
+  explosionDuration: 1
 --- !u!114 &574199815919451545
 MonoBehaviour:
   m_ObjectHideFlags: 0

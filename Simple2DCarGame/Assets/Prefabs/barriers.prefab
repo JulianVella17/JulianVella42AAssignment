@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waveConfig: {fileID: 11400000, guid: 11d2463f499df8b4ea6967f21253646b, type: 2}
+  PointGain: {fileID: 8300000, guid: 686bb37f0d9b8084c941dcd18de36c28, type: 3}
+  PointGainVolume: 0.75
 --- !u!114 &-5068579625565834373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoints: []
   waveConfig: {fileID: 11400000, guid: 11d2463f499df8b4ea6967f21253646b, type: 2}
+  PointGain: {fileID: 0}
+  PointGainVolume: 0.75
 --- !u!114 &8305433832314083982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,9 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714c82ccd4d9faf449a17929a2d13956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
-  health: 50
   deathVisualEffects: {fileID: 270558947296391615, guid: 62b8628df3f7f834b81780033c7bacb6, type: 3}
   explosionDuration: 1

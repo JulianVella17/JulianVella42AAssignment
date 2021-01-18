@@ -9,6 +9,12 @@ public class EnemyPathing : MonoBehaviour
 
     [SerializeField] WaveConfig waveConfig;
 
+    [SerializeField] int scoreValue = 5;
+
+    [SerializeField] AudioClip PointGain;
+    //allows to change volume accordingly from 0 to 1
+    [SerializeField] [Range(0, 1)] float PointGainVolume = 0.75f;
+
     //saves the waypoint in which we want to go
     int waypointIndex = 0;
 
@@ -54,6 +60,11 @@ public class EnemyPathing : MonoBehaviour
         //if enemy reaches last waypoint
         else
         {
+            FindObjectOfType<GameSession>().AddToScore(scoreValue);
+            print("ADD");
+
+            AudioSource.PlayClipAtPoint(PointGain, Camera.main.transform.position, PointGainVolume);
+
             Destroy(gameObject);
         }
     }

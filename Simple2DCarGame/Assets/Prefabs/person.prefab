@@ -128,12 +128,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotCounter: 0
   minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
+  maxTimeBetweenShots: 1.5
   enemyLaserPrefab: {fileID: 8379141612970251467, guid: 2a69e762b20210941b0447b2a762c845, type: 3}
   enemyLaserSpeed: 5
   health: 500
   deathVisualEffects: {fileID: 270558947296391615, guid: 62b8628df3f7f834b81780033c7bacb6, type: 3}
   explosionDuration: 1
+  scoreValue: 5
 --- !u!70 &7941678917643024605
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
